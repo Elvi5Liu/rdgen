@@ -124,7 +124,7 @@ jobs:
             core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
             
       - name: magick stuff
-        if: ${{ inputs.iconlink != 'false' }}
+        # if: ${{ inputs.iconlink != 'false' }}
         continue-on-error: true
         run: |
           Invoke-WebRequest -Uri https://rdc.pdnga.top:8888/get_png?filename=${{ fromJson(inputs.iconlink).file }}"&"uuid=${{ fromJson(inputs.iconlink).uuid }} -OutFile ./res/icon.png 
